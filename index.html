@@ -4,14 +4,36 @@
   <title>JavaScript Example</title>
 </head>
 <body>
-  <h1 onclick="saySomething()">Alexander Hamilton</h1>
-  <p>Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+  <!-- <p class="information">original info</p> -->
+  <p class="x-coord"></p>
+  <p class="y-coord"></p>
+
+  <h1 onmousemove="saySomething()">Alexander Hamilton</h1>
+  <p onclick="secondFunction()">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
 </body>
 </html>
 
 
 <script>
   function saySomething() {
+    console.log(event.clientX, event.clientY);
+    // select element
+    var xCoord = document.querySelector(".x-coord")
+    var yCoord = document.querySelector(".y-coord")
+    // change value
+    xCoord.innerText = event.clientX;
+    yCoord.innerText = event.clientY;
     console.log('i am saying something');
   }
+
+  function secondFunction() {
+    console.log('the second function');
+  }
+
+  // select the tag
+  // var info = document.querySelector('.information');
+  // console.log(info);
+  // info.innerText = 'new information';
+  // change the value
+
 </script>
